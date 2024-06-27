@@ -10,3 +10,16 @@
     background-color: #787b82;
     border-color: #4e5057;
 }
+
+form.login.ng-untouched.ng-pristine.ng-valid{
+    width: 40%;
+}
+
+div.login-wrapper{
+    background-image: url(/assets/image.png);
+    background-position: center right;
+    background-size: cover;
+}
+.login-wrapper .login {
+    min-height: 100vh;
+  }
