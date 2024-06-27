@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HartiVoit": {
+    "hartivoit": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/harti-voit",
+            "outputPath": "dist/hartivoit",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -33,21 +33,9 @@
               "src/styles.scss",
               "node_modules/@cds/core/global.min.css",
               "node_modules/@cds/core/styles/theme.dark.min.css",
-              "node_modules/@clr/ui/clr-ui.min.css",
-              "node_modules/@clr/icons/clr-icons.min.css"
+              "node_modules/@clr/ui/clr-ui.min.css"
             ],
-            "scripts": [
-              "../node_modules/mutationobserver-shim/dist/mutationobserver.min.js",
-              "../node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-              "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
-              "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
-              "node_modules/@clr/icons/clr-icons.min.js"
-            ],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -77,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "HartiVoit:build:production"
+              "buildTarget": "hartivoit:build:production"
             },
             "development": {
-              "buildTarget": "HartiVoit:build:development"
+              "buildTarget": "hartivoit:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "HartiVoit:build"
+            "buildTarget": "hartivoit:build"
           }
         },
         "test": {
@@ -102,10 +90,16 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "node_modules/@cds/core/global.min.css",
+              "node_modules/@cds/core/styles/theme.dark.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@cds/core/global.min.css",
+              "node_modules/@cds/core/styles/theme.dark.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css"
             ],
             "scripts": []
           }
@@ -114,6 +108,6 @@
     }
   },
   "cli": {
-    "analytics": "93eef665-8ef1-4c0c-b464-6dfb586b4bcc"
+    "analytics": false
   }
 }

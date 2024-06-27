@@ -1,0 +1,25 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@474&display=swap" rel="stylesheet">
+</head>
+
+<nav class="navbar">
+    <div class="tab" (click)="navegar('home')">
+          <button><h3>
+            <span class="material-symbols-outlined">menu</span>
+          </h3></button>
+    </div>
+    <div class="tab" (click)="navegar('ventas')">
+        <button><h3>Ventas</h3></button>
+    </div>
+    <div class="tab" (click)="navegar('clientes')">
+        <button><h3>Clientes</h3></button>
+    </div>
+    <div class="tab" (click)="navegar('inventario')">
+        <button><h3>Inventario</h3></button>
+    </div>
+    <div class="tab" (click)="navegar('proveedores')">
+        <button><h3>Proveedores</h3></button>
+    </div>
+</nav>

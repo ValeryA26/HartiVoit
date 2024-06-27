@@ -1,0 +1,42 @@
+.navbar{
+    background-color: #E3D5ED;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 2rlh;
+    align-items: center;
+    button {
+        background-color: #E3D5ED;
+        border: 20px;
+        border-color: #E3D5ED;
+        align-self: center;
+        height: 2rlh;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    button:hover{
+        background-color: #8D62A0;
+    }
+    button:active{
+        background-color: #8D62A0;
+    }
+    h3{
+        color: #fff;
+        align-self: center;
+        margin-top: 0px;
+        font-family: "Kumbh Sans";
+        font-weight: 500;
+        text-decoration: none;
+    }
+}
+
+.kumbh-sans-nv {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+.material-symbols-outlined{
+    color: #fff;
+}
+
