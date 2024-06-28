@@ -18,7 +18,5 @@ export class TabsComponent {
   navegar(direccion:string){
     this.router.navigate([direccion])
   }
-
-  
 }
 

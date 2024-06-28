@@ -1,0 +1,52 @@
+#fondo{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar{
+    background-color: #d4bee3;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    height: 2rlh;
+    align-items: center;
+    h3{
+        font-size: 32px;
+        margin-top: 0;
+        margin-left: 40px;
+        color: #223473;
+        font-weight: 900;
+    }
+}
+
+div.body{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 700px;
+    max-width: 700px;
+    align-content: center;
+    justify-content: center;
+}
+.icon{
+    fill: #fff;
+}
+
+.btn-icon{
+    flex-wrap: wrap;
+    height: 250px;
+    width: 250px;
+    background-color: #4a598f;
+    border-color: #48578c;
+    border-radius: 20px;
+    h3{
+        margin-left: 30px;
+        margin-right: 30px;
+        color:#fff;
+        font-family: "Kumbh Sans";
+        font-weight: 500;
+    }
+}
+.btn-icon:hover{
+    background-color: #223473;
+}
