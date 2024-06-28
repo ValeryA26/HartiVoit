@@ -1,0 +1,79 @@
+.searchie{
+    fill: #000;
+}
+.iconbutton{
+    fill: #fff;
+}
+div.fondo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+div.body0{
+    width: 1000px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    h1{
+        font-weight: 700;
+        color: #6F3D86;
+        font-size: 70px;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+    
+    div.body1{
+        display: flex;
+        align-content: auto;
+        justify-content: center;
+        clr-input-container{
+            display: flex;
+            flex-direction: row;
+        }
+        #buscadorbtn{
+            width: 120px;
+            background-color: #6F3D86;
+            border-color: #683580;
+            margin-right: 30px;
+        }
+        .btn-primary{
+            border-radius: 12px;
+            font-size: 15px;
+            background-color: #223473;
+            border-color: #1d2f70;
+            margin-top: 0px;
+        }
+        .clr-input,
+        .clr-input-wrapper {
+            max-width: 100%;
+            width: 100%;
+            height: 50px;
+        }
+        .clr-input {
+            height: 30px;
+            color: var(--clr-forms-text-color);
+            border-bottom: var(--cds-alias-object-border-width-100) solid var(--clr-forms-border-color);
+            display: inline-block;
+            padding: var(--clr-forms-input-padding);
+            max-height: calc(4* var(--clr-forms-baseline));
+            font-size: 17px;
+            font-weight: var(--cds-alias-typography-secondary-font-weight);
+            line-height: var(--cds-global-space-9);
+            letter-spacing: var(--cds-alias-typography-secondary-letter-spacing);
+        }
+        .clr-form-control{
+            margin-top: 0;
+            margin-right: 20px;
+            height: 50px;
+        }
+        .clr-control-container, 
+        .clr-input-wrapper.clr-input {
+          padding-left: 0;
+          padding-right: 0;
+        }
+    }
+}

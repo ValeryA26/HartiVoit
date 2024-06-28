@@ -1,2 +1,35 @@
 <app-tabs></app-tabs>
-<p>inventario works!</p>
+<div class="fondo">
+    <div class="body0" >
+        <h1>INVENTARIOS</h1>
+        <div class="body1">
+                
+                <clr-input-container>
+                    <label><svg class="searchie" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
+                        <title>search-line</title>
+                        <path d="M16.33,5.05A10.95,10.95,0,1,1,5.39,16,11,11,0,0,1,16.33,5.05m0-2.05a13,13,0,1,0,13,13,13,13,0,0,0-13-13Z"/><path d="M35,33.29l-7.37-7.42-1.42,1.41,7.37,7.42A1,1,0,1,0,35,33.29Z"/>
+                        <rect x="0" y="0" width="20" height="20" fill-opacity="0"/>
+                    </svg></label>
+                    <input id="buscadorinput" clrInput placeholder="Buscador" name="input" [(ngModel)]="input" />
+                    <clr-control-helper>Ingrese el producto o la referencia de la que necesita información.</clr-control-helper>
+                </clr-input-container>
+    
+                <button id="buscadorbtn" class="btn btn-primary">Buscar</button>
+                
+                <button class="btn btn-primary">
+                    <svg class="iconbutton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
+                        <title>clone-line</title>
+                        <path d="M6,6H22v4h2V6a2,2,0,0,0-2-2H6A2,2,0,0,0,4,6V22a2,2,0,0,0,2,2h4V22H6Z"/><path d="M30,12H14a2,2,0,0,0-2,2V30a2,2,0,0,0,2,2H30a2,2,0,0,0,2-2V14A2,2,0,0,0,30,12Zm0,18H14V14H30Z"/><polygon points="21 28 23 28 23 23 28 23 28 21 23 21 23 16 21 16 21 21 16 21 16 23 21 23 21 28"/>
+                        <rect x="0" y="0" width="20" height="20" fill-opacity="0"/>
+                      </svg>Existencias
+                </button>
+                <button class="btn btn-primary">
+                    <svg class="iconbutton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
+                        <title>plus-line</title>
+                        <path d="M30,17H19V6a1,1,0,1,0-2,0V17H6a1,1,0,0,0-1,1,.91.91,0,0,0,1,.94H17V30a1,1,0,1,0,2,0V19H30a1,1,0,0,0,1-1A1,1,0,0,0,30,17Z"/>
+                        <rect x="0" y="0" width="20" height="20" fill-opacity="0"/>
+                      </svg>Crear Producto
+                </button>
+        </div>
+    </div>
+</div>
