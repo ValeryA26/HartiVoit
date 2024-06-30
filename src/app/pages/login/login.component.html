@@ -1,5 +1,5 @@
 <div class="login-wrapper">
-    <form class="login">
+    <form class="login" (ngSubmit)="login()">
       <div class="login-header">
       </div>
       <div class="login-body">
@@ -13,13 +13,13 @@
         </section>
         <div class="login-group">
           <clr-input-container>
-            <label class="clr-sr-only">E-mail</label>
+            <label class="clr-sr-only">Nombre de usuario</label>
             <input
               type="text"
               autocomplete="username"
               name="username"
               clrInput
-              placeholder="Nombre de usuario"
+              placeholder="Usuario"
               [(ngModel)]="form.username"
             />
           </clr-input-container>
@@ -34,7 +34,7 @@
               [(ngModel)]="form.password"
             />
           </clr-password-container>
-          <div class="error active">Credenciales inválidas</div>
+          <div *ngIf="loginFailed" class="error active">Credenciales inválidas</div>
           <button type="submit" class="btn btn-primary">Ingresar</button>
         </div>
       </div>

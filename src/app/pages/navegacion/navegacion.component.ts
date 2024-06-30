@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TabsComponent } from '../../core/components/tabs/tabs.component';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-navegacion',
@@ -10,9 +11,13 @@ import { TabsComponent } from '../../core/components/tabs/tabs.component';
   styleUrl: './navegacion.component.scss'
 })
 export class NavegacionComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router, private authService: AuthService){}
   
   navegar(direccion:string){
     this.router.navigate([direccion])
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

@@ -5,20 +5,24 @@ import { LoginComponent } from './pages/login/login.component';
 import { NavegacionComponent } from './pages/navegacion/navegacion.component';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
 import { VentasComponent } from './pages/ventas/ventas.component';
+import { AuthGuard } from './core/auth.guard';
 import { TabsComponent } from './core/components/tabs/tabs.component';
 
 export const routes: Routes = [
     {
         path:"inventario",
-        component: InventarioComponent
+        component: InventarioComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:"clientes",
-        component: ClientesComponent
+        component: ClientesComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:"",
-        component: LoginComponent
+        redirectTo: "home",
+        pathMatch:"full"
     },
     {
         path:"login",
@@ -26,14 +30,17 @@ export const routes: Routes = [
     },
     {
         path:"home",
-        component: NavegacionComponent
+        component: NavegacionComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:"proveedores",
-        component: ProveedoresComponent
+        component: ProveedoresComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:"ventas",
-        component: VentasComponent
+        component: VentasComponent,
+        canActivate: [AuthGuard]
     },
 ];
