@@ -1,18 +1,18 @@
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { FormBuilder, FormGroup, Validators ,ReactiveFormsModule } from '@angular/forms';
-import { ClarityModule } from '@clr/angular';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ClarityModule } from '@clr/angular';
 
 @Component({
   selector: 'app-product-modal',
   standalone: true,
-  imports: [ClarityModule, ReactiveFormsModule, CommonModule],
-  templateUrl: './modalv.component.html',
-  styleUrls: ['./modalv.component.css']
+  imports: [CommonModule, ReactiveFormsModule, ClarityModule],
+  templateUrl: './product-modal.component.html',
+  styleUrls: ['./product-modal.component.css']
 })
-export class ModalvComponent implements OnChanges {
-  @Input() product: any = null;
+export class ProductModalComponent implements OnChanges {
   @Input() isOpen: boolean = false;
+  @Input() product: any = null;
   @Output() save = new EventEmitter<any>();
   @Output() close = new EventEmitter<void>();
 
