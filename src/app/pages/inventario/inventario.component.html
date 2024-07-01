@@ -38,15 +38,15 @@
                 </button>
         </div>
         <div class="tablainv">
-            <table class="table table-striped table-bordered">
+            <table id="tabinv" class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th class="left">PLU</th>
-                    <th class="left">Producto</th>
-                    <th class="left">Marca</th>
-                    <th class="left">Linea</th>
-                    <th class="left">Cantidad</th>
-                    <th class="left">Acciones</th>
+                    <th>PLU</th>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Linea</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>                
                 <tbody *ngIf="products.length > 0">
@@ -56,7 +56,19 @@
                     <td class="left">{{ product.marca }}</td>
                     <td class="left">{{ product.linea.nombre }}</td>
                     <td class="left">{{ product.cantidad }}</td>
-                    <td class="left"><button  class="btn btn-primary">Eliminar</button><button  class="btn btn-primary">Editar</button></td>
+                    <td class="left"><button id="eliminacion">
+                      <svg class="icontb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
+                        <title>trash-line</title>
+                        <path d="M27.14,34H8.86A2.93,2.93,0,0,1,6,31V11.23H8V31a.93.93,0,0,0,.86,1H27.14A.93.93,0,0,0,28,31V11.23h2V31A2.93,2.93,0,0,1,27.14,34Z"/><path d="M30.78,9H5A1,1,0,0,1,5,7H30.78a1,1,0,0,1,0,2Z"/><rect x="21" y="13" width="2" height="15"/><rect x="13" y="13" width="2" height="15"/><path d="M23,5.86H21.1V4H14.9V5.86H13V4a2,2,0,0,1,1.9-2h6.2A2,2,0,0,1,23,4Z"/>
+                        <rect x="0" y="0" width="20" height="20" fill-opacity="0"/>
+                      </svg>
+                    </button><button id="edicion">
+                      <svg class="icontb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
+                        <title>pencil-line</title>
+                        <path d="M33.87,8.32,28,2.42a2.07,2.07,0,0,0-2.92,0L4.27,23.2l-1.9,8.2a2.06,2.06,0,0,0,2,2.5,2.14,2.14,0,0,0,.43,0L13.09,32,33.87,11.24A2.07,2.07,0,0,0,33.87,8.32ZM12.09,30.2,4.32,31.83l1.77-7.62L21.66,8.7l6,6ZM29,13.25l-6-6,3.48-3.46,5.9,6Z"/>
+                        <rect x="0" y="0" width="20" height="20" fill-opacity="0"/>
+                      </svg>
+                    </button></td>
                   </tr>
                 </tbody>
               </table>

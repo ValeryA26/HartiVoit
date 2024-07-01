@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import '@cds/core/icon/register.js';
+import '@cds/core/button/register.js';
 
 @Injectable({
   providedIn: 'root'

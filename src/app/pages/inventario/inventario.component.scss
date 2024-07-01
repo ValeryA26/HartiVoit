@@ -77,5 +77,24 @@ div.body0{
     div.tablainv {
         width: 100%;
         border-collapse: collapse;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    td{
+        vertical-align: middle;
+        text-align: center;
+    }
+    #eliminacion, #edicion{
+        background-color: #566497;
+        border:none;
+        border-radius: 10px;
+        height: 36px;
+        width: 36px;
+        padding: 0px;
+        margin-right: 10px;
+    }
+    .icontb{
+        fill: #fff;
     }
 }
