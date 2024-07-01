@@ -22,13 +22,6 @@
     
                 <button id="buscadorbtn" class="btn btn-primary">Buscar</button>
                 
-                <button class="btn btn-primary">
-                    <svg class="iconbutton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
-                        <title>clone-line</title>
-                        <path d="M6,6H22v4h2V6a2,2,0,0,0-2-2H6A2,2,0,0,0,4,6V22a2,2,0,0,0,2,2h4V22H6Z"/><path d="M30,12H14a2,2,0,0,0-2,2V30a2,2,0,0,0,2,2H30a2,2,0,0,0,2-2V14A2,2,0,0,0,30,12Zm0,18H14V14H30Z"/><polygon points="21 28 23 28 23 23 28 23 28 21 23 21 23 16 21 16 21 21 16 21 16 23 21 23 21 28"/>
-                        <rect x="0" y="0" width="20" height="20" fill-opacity="0"/>
-                      </svg>Existencias
-                </button>
                 <button class="btn btn-primary" (click)="openModal()">
                     <svg class="iconbutton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
                         <title>plus-line</title>
@@ -54,9 +47,9 @@
                     <td class="left">{{ product.custom_id }}</td>
                     <td class="left">{{ product.nombre }}</td>
                     <td class="left">{{ product.marca }}</td>
-                    <td class="left">{{ product.linea.nombre }}</td>
+                    <td class="left">{{ product.linea_nombre }}</td>
                     <td class="left">{{ product.cantidad }}</td>
-                    <td class="left"><button id="eliminacion">
+                    <td class="left"><button id="eliminacion" (click)="deleteProduct(product)">
                       <svg class="icontb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
                         <title>trash-line</title>
                         <path d="M27.14,34H8.86A2.93,2.93,0,0,1,6,31V11.23H8V31a.93.93,0,0,0,.86,1H27.14A.93.93,0,0,0,28,31V11.23h2V31A2.93,2.93,0,0,1,27.14,34Z"/><path d="M30.78,9H5A1,1,0,0,1,5,7H30.78a1,1,0,0,1,0,2Z"/><rect x="21" y="13" width="2" height="15"/><rect x="13" y="13" width="2" height="15"/><path d="M23,5.86H21.1V4H14.9V5.86H13V4a2,2,0,0,1,1.9-2h6.2A2,2,0,0,1,23,4Z"/>

@@ -55,4 +55,11 @@ export class InventarioComponent implements OnInit {
     }
     this.closeModal();
   }
+  deleteProduct(product: any): void {
+    if (confirm(`¿Estás seguro de que quieres eliminar el producto ${product.nombre}?`)) {
+      this.productService.deleteProducto(product.id).subscribe(() => {
+        this.products = this.products.filter(p => p !== product);
+      });
+    }
+  }
 }
