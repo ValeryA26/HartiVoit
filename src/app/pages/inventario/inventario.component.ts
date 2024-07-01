@@ -17,7 +17,7 @@ import { ModalComponent } from '../../core/components/dialog/modalc/modalc.compo
 export class InventarioComponent implements OnInit {
   input="";
   isModalOpen: boolean = false;
-  selectedProduct: any = null;
+  selectedProduct: any = {};
   products: any[] = [];  // Lista de productos
 
   constructor(private productService: InventoryService) {}
@@ -32,16 +32,17 @@ export class InventarioComponent implements OnInit {
     });
   }
 
-  openModal(): void {
+  openModal(product: any = {}): void {
     this.isModalOpen = true;
+    this.selectedProduct = product || {};
   }
 
   closeModal(): void {
     this.isModalOpen = false;
-    this.selectedProduct = null;
+    this.selectedProduct = {};
   }
 
-  saveProduct(product: any): void {
+  saveProduct(product: any = null): void {
     if (this.selectedProduct) {
       // Editar producto existente
       const index = this.products.findIndex(p => p === this.selectedProduct);

@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges,OnInit } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import { ClarityModule } from '@clr/angular';
 import { FormsModule,FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms'
+import { InventoryService } from '../../../../pages/inventario/inventario.service';
 
 @Component({
   selector: 'app-modal',
@@ -11,18 +12,23 @@ import { FormsModule,FormBuilder, FormGroup, Validators, ReactiveFormsModule} fr
   styleUrl: './modalc.component.scss'
 })
 
-export class ModalComponent implements OnChanges {
+export class ModalComponent implements OnChanges, OnInit {
   @Input() open: boolean = false;
   @Input() product: any = {};
   @Output() save = new EventEmitter<any>();
   @Output() close = new EventEmitter<void>();
 
   productForm: FormGroup;
+  lineas: any[] = [];
+  proveedores: any[] = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder, 
+    private inventarioService: InventoryService
+  ) {
     this.productForm = this.fb.group({
       id: ['', Validators.required],
-      producto: ['', Validators.required],
+      nombre: ['', Validators.required],
       cantidad: [null, Validators.required],
       marca: ['', Validators.required],
       linea: ['', Validators.required],
@@ -33,10 +39,41 @@ export class ModalComponent implements OnChanges {
     });
   }
 
+  ngOnInit(): void {
+    this.loadLineas();
+    this.loadProveedores();
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['product'] && this.product) {
       this.productForm.patchValue(this.product || {});
+      if (this.lineas.length > 0 && this.proveedores.length > 0) {
+        this.productForm.patchValue({
+          linea: this.product.linea ? this.product.linea.id : null,
+          proveedor: this.product.proveedor ? this.product.proveedor.id : null
+        });
+      }
     }
+  }
+
+  loadLineas(): void {
+    this.inventarioService.getLineas().subscribe((data) => {
+      this.lineas = data;
+      // Establecer el valor del campo 'linea' después de cargar las líneas
+      if (this.product.linea) {
+        this.productForm.patchValue({ linea: this.product.linea.id });
+      }
+    });
+  }
+
+  loadProveedores(): void {
+    this.inventarioService.getProveedores().subscribe((data) => {
+      this.proveedores = data;
+      // Establecer el valor del campo 'proveedor' después de cargar los proveedores
+      if (this.product.proveedor) {
+        this.productForm.patchValue({ proveedor: this.product.proveedor.id });
+      }
+    });
   }
 
   onSave(): void {
@@ -49,18 +86,5 @@ export class ModalComponent implements OnChanges {
   onClose(): void {
     this.close.emit();
     this.productForm.reset();
-  }
-
-  openModal() {
-    this.open = true;
-  }
-
-  closeModal() {
-    this.open = false;
-  }
-
-  saveProduct() {
-    console.log('Product saved', this.product);
-    this.closeModal();
   }
 }

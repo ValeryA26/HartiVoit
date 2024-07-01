@@ -21,7 +21,7 @@ export class InventoryService {
   }
 
   getProveedores(): Observable<any> {
-    return this.http.get(`${this.apiUrl}proveedors/`);
+    return this.http.get(`${this.apiUrl}proveedores/`);
   }
 
   addProducto(producto: any): Observable<any> {
