@@ -1,4 +1,10 @@
 <app-tabs></app-tabs>
+<app-modal 
+  [open]="isModalOpen" 
+  [product]="selectedProduct" 
+  (save)="saveProduct($event)" 
+  (close)="closeModal()">
+</app-modal>
 <div class="fondo">
     <div class="body0" >
         <h1>INVENTARIOS</h1>
@@ -23,7 +29,7 @@
                         <rect x="0" y="0" width="20" height="20" fill-opacity="0"/>
                       </svg>Existencias
                 </button>
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" (click)="openModal()">
                     <svg class="iconbutton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
                         <title>plus-line</title>
                         <path d="M30,17H19V6a1,1,0,1,0-2,0V17H6a1,1,0,0,0-1,1,.91.91,0,0,0,1,.94H17V30a1,1,0,1,0,2,0V19H30a1,1,0,0,0,1-1A1,1,0,0,0,30,17Z"/>
@@ -50,7 +56,7 @@
                     <td class="left">{{ product.marca }}</td>
                     <td class="left">{{ product.linea.nombre }}</td>
                     <td class="left">{{ product.cantidad }}</td>
-                    <td class="left"><button (click)="openModal(product)" class="btn btn-primary">Eliminar</button><button (click)="openModal(product)" class="btn btn-primary">Editar</button></td>
+                    <td class="left"><button  class="btn btn-primary">Eliminar</button><button  class="btn btn-primary">Editar</button></td>
                   </tr>
                 </tbody>
               </table>

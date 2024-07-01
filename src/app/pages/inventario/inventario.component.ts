@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { ClrIconModule, ClrInputModule } from '@clr/angular';
 import { InventoryService } from './inventario.service';
 import { CommonModule } from '@angular/common';
+import { ModalComponent } from '../../core/components/dialog/modalc/modalc.component';
+
 
 @Component({
   selector: 'app-inventario',
   standalone: true,
-  imports: [TabsComponent, FormsModule, ClrInputModule, ClrIconModule,CommonModule ],
+  imports: [ModalComponent,TabsComponent, FormsModule, ClrInputModule, ClrIconModule,CommonModule ],
   templateUrl: './inventario.component.html',
   styleUrl: './inventario.component.scss'
 })
@@ -30,8 +32,7 @@ export class InventarioComponent implements OnInit {
     });
   }
 
-  openModal(product: any = null): void {
-    this.selectedProduct = product;
+  openModal(): void {
     this.isModalOpen = true;
   }
 
