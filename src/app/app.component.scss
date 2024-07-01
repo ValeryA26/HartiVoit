@@ -4,3 +4,10 @@
     font-weight: 720;
     font-style: normal;
   }
+
+  .modal {
+    display: none;
+  }
+  .modal.open {
+    display: block;
+  }

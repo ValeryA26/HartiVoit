@@ -7,6 +7,7 @@ import { ProveedoresComponent } from './pages/proveedores/proveedores.component'
 import { VentasComponent } from './pages/ventas/ventas.component';
 import { AuthGuard } from './core/auth.guard';
 import { TabsComponent } from './core/components/tabs/tabs.component';
+import { ModalComponent } from './core/components/dialog/modalc/modalc.component';
 
 export const routes: Routes = [
     {
@@ -41,6 +42,11 @@ export const routes: Routes = [
     {
         path:"ventas",
         component: VentasComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path:"pruebadelmodal",
+        component: ModalComponent,
         canActivate: [AuthGuard]
     },
 ];
