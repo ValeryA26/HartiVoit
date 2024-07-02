@@ -19,6 +19,7 @@ export class InventarioComponent implements OnInit {
   isModalOpen: boolean = false;
   selectedProduct: any = {};
   products: any[] = [];  // Lista de productos
+  filteredProducts: any[] = [];  // Lista de productos filtrados
 
   constructor(private productService: InventoryService) {}
 
@@ -29,6 +30,7 @@ export class InventarioComponent implements OnInit {
   loadProducts(): void {
     this.productService.getProductos().subscribe(data => {
       this.products = data;
+      this.filteredProducts = data;
     });
   }
 
@@ -61,5 +63,11 @@ export class InventarioComponent implements OnInit {
         this.products = this.products.filter(p => p !== product);
       });
     }
+  }
+  searchProducts(): void {
+    this.filteredProducts = this.products.filter(product => 
+      product.nombre.toLowerCase().includes(this.input.toLowerCase()) || 
+      product.custom_id.toLowerCase().includes(this.input.toLowerCase())
+    );
   }
 }
