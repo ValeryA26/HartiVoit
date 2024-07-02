@@ -4,44 +4,44 @@
     <form [formGroup]="productForm">
       <clr-input-container>
         <label>Producto</label>
-        <input clrInput formControlName="nombre" type="text" />
+        <input id="product" clrInput formControlName="nombre" type="text" />
       </clr-input-container>
       <clr-input-container>
         <label>Cantidad</label>
-        <input clrInput formControlName="cantidad" type="number" />
+        <input id="cantidad" clrInput formControlName="cantidad" type="number" />
       </clr-input-container>
       <clr-input-container>
         <label>Marca</label>
-        <input clrInput formControlName="marca" type="text" />
+        <input id="marca" clrInput formControlName="marca" type="text" />
       </clr-input-container>
       <clr-select-container>
         <label>Linea</label>
-        <select clrSelect formControlName="linea">
+        <select id="linea" clrSelect formControlName="linea">
           <option *ngFor="let linea of lineas" [value]="linea.id">{{ linea.nombre }}</option>
         </select>
       </clr-select-container>
       <clr-select-container>
         <label>Proveedor</label>
-        <select clrSelect formControlName="proveedor">
+        <select id="proveedor" clrSelect formControlName="proveedor">
           <option *ngFor="let proveedor of proveedores" [value]="proveedor.id">{{ proveedor.nombre }}</option>
         </select>
       </clr-select-container>
-      <clr-input-container>
+      <clr-textarea-container>
         <label>Descripción</label>
-        <input clrInput formControlName="descripcion" type="text" />
-      </clr-input-container>
+        <textarea id="descripcion" clrTextarea formControlName="descripcion" type="text"></textarea>
+      </clr-textarea-container>
       <clr-input-container>
         <label>Precio Detal</label>
-        <input clrInput formControlName="precio_detal" type="number" />
+        <input id="precio1" clrInput formControlName="precio_detal" type="number" />
       </clr-input-container>
       <clr-input-container>
         <label>Precio Mayor</label>
-        <input clrInput formControlName="precio_mayor" type="number" />
+        <input id="precio2" clrInput formControlName="precio_mayor" type="number" />
       </clr-input-container>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline" (click)="onClose()">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
+    <button id="cancel" type="button" class="btn btn-outline" (click)="onClose()">Cancelar</button>
+    <button id="save" type="button" class="btn btn-primary" (click)="onSave()">Guardar</button>
   </div>
 </clr-modal>

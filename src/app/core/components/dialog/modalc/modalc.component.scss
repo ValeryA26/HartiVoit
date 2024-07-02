@@ -5,4 +5,37 @@ clr-modal{
     --clr-modal-title-font-size:40px;
     --clr-modal-title-font-weight:700;
     --clr-modal-lg-width:60vw;
+
+}
+
+#product, #descripcion{
+    width: 56.5vw;
+}
+#cantidad, #linea{
+    width: 15vw;
+}
+#marca, #proveedor{
+    width: 40vw;
+}
+#precio1, #precio2{
+    width: 27.5vw;
+}
+
+clr-input-container, clr-select-container{
+    margin-top: 15px;
+}
+
+#cancel{
+    border-color: #8D62A0;
+    color: #8D62A0;
+}
+#save{
+    background-color: #6F3D86;
+    border-color: #6F3D86;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
