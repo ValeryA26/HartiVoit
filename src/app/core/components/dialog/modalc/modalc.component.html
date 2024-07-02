@@ -1,5 +1,5 @@
-<clr-modal [(clrModalOpen)]="open" (clrModalOpenChange)="onClose()">
-  <h3 class="modal-title">{{ product?.id ? 'Edit Product' : 'Create Product' }}</h3>
+<clr-modal [(clrModalOpen)]="open" [clrModalSize]="'lg'" (clrModalOpenChange)="onClose()">
+  <h3 class="modal-title">{{ product?.id ? 'Edición de producto' : 'Creación de producto' }}</h3>
   <div class="modal-body">
     <form [formGroup]="productForm">
       <clr-input-container>
