@@ -1,23 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { VentasComponent } from './ventas.component';
+import { AuthService } from '../../core/auth.service';
 
 describe('VentasComponent', () => {
-  let component: VentasComponent;
-  let fixture: ComponentFixture<VentasComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VentasComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(VentasComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      imports: [HttpClientTestingModule, VentasComponent],
+      providers: [AuthService]
+    }).compileComponents();
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(VentasComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });

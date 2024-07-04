@@ -72,7 +72,6 @@ export class ModalComponent implements OnChanges, OnInit {
             console.log('Producto actualizado:', updatedProduct);
             this.save.emit(updatedProduct);
             this.onClose();
-            window.location.reload();
           },
           (error) => {
             console.error('Update error:', error);
@@ -85,7 +84,6 @@ export class ModalComponent implements OnChanges, OnInit {
             console.log('Producto creado:', newProduct);
             this.save.emit(newProduct);
             this.onClose();
-            window.location.reload();
           },
           (error) => {
             console.error('Create error:', error);

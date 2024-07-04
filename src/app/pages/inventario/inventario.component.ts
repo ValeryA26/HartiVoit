@@ -58,6 +58,7 @@ export class InventarioComponent implements OnInit {
       // Crear nuevo producto
       this.products.push(product);
     }
+    this.filteredProducts = [...this.products];
     this.closeModal();
   }
   
