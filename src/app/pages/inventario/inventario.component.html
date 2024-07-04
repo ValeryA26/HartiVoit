@@ -1,13 +1,23 @@
 <app-tabs></app-tabs>
+
 <app-modal 
   [open]="isModalOpen" 
   [product]="selectedProduct" 
   (save)="saveProduct($event)" 
   (close)="closeModal()">
 </app-modal>
+
+<app-confirm-modal
+  [isOpen]="isConfirmModalOpen"
+  [title]="'Confirmar Eliminación'"
+  [message]="'¿Estás seguro de que quieres eliminar el producto ' + selectedProduct?.nombre + '?'"
+  (confirmed)="confirmDeleteProduct()"
+  (closed)="closeConfirmModal()">
+</app-confirm-modal>
+
 <div class="fondo">
   <div class="body0">
-    <h1>INVENTARIOS</h1>
+    <h1>INVENTARIO</h1>
     <div class="body1">
       <clr-input-container>
         <label>
@@ -24,7 +34,7 @@
       
       <button id="buscadorbtn" class="btn btn-primary" (click)="searchProducts()">Buscar</button>
       
-      <button class="btn btn-primary" (click)="openModal()">
+      <button *ngIf="hasCreatePermission()" class="btn btn-primary" (click)="openModal()">
         <svg class="iconbutton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
           <title>plus-line</title>
           <path d="M30,17H19V6a1,1,0,1,0-2,0V17H6a1,1,0,0,0-1,1,.91.91,0,0,0,1,.94H17V30a1,1,0,1,0,2,0V19H30a1,1,0,0,0,1-1A1,1,0,0,0,30,17Z"/>
@@ -42,7 +52,7 @@
             <th>Marca</th>
             <th>Linea</th>
             <th>Cantidad</th>
-            <th>Acciones</th>
+            <th *ngIf="hasDeletePermission() || hasEditPermission()">Acciones</th>
           </tr>
         </thead>                
         <tbody *ngIf="filteredProducts.length > 0">
@@ -52,8 +62,8 @@
             <td class="left">{{ product.marca }}</td>
             <td class="left">{{ product.linea_nombre }}</td>
             <td class="left">{{ product.cantidad }}</td>
-            <td class="left">
-              <button id="eliminacion" (click)="deleteProduct(product)">
+            <td *ngIf="hasDeletePermission() || hasEditPermission()" class="left">
+              <button *ngIf="hasDeletePermission()" id="eliminacion" (click)="deleteProduct(product)">
                 <svg class="icontb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
                   <title>trash-line</title>
                   <path d="M27.14,34H8.86A2.93,2.93,0,0,1,6,31V11.23H8V31a.93.93,0,0,0,.86,1H27.14A.93.93,0,0,0,28,31V11.23h2V31A2.93,2.93,0,0,1,27.14,34Z"/>
@@ -64,7 +74,7 @@
                   <rect x="0" y="0" width="20" height="20" fill-opacity="0"/>
                 </svg>
               </button>
-              <button id="edicion" (click)="openModal(product)">
+              <button *ngIf="hasEditPermission()" id="edicion" (click)="openModal(product)">
                 <svg class="icontb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
                   <title>pencil-line</title>
                   <path d="M33.87,8.32,28,2.42a2.07,2.07,0,0,0-2.92,0L4.27,23.2l-1.9,8.2a2.06,2.06,0,0,0,2,2.5,2.14,2.14,0,0,0,.43,0L13.09,32,33.87,11.24A2.07,2.07,0,0,0,33.87,8.32ZM12.09,30.2,4.32,31.83l1.77-7.62L21.66,8.7l6,6ZM29,13.25l-6-6,3.48-3.46,5.9,6Z"/>

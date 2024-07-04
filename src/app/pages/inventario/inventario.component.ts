@@ -3,25 +3,28 @@ import { TabsComponent } from '../../core/components/tabs/tabs.component';
 import { FormsModule } from '@angular/forms';
 import { ClrIconModule, ClrInputModule } from '@clr/angular';
 import { InventoryService } from './inventario.service';
+import { AuthService } from '../../core/auth.service';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../../core/components/dialog/modalc/modalc.component';
+import { ConfirmModalComponent } from '../../core/components/dialog/confirm-modal/confirm-modal.component';
 
 
 @Component({
   selector: 'app-inventario',
   standalone: true,
-  imports: [ModalComponent,TabsComponent, FormsModule, ClrInputModule, ClrIconModule,CommonModule ],
+  imports: [ConfirmModalComponent,ModalComponent,TabsComponent, FormsModule, ClrInputModule, ClrIconModule,CommonModule ],
   templateUrl: './inventario.component.html',
   styleUrl: './inventario.component.scss'
 })
 export class InventarioComponent implements OnInit {
   input="";
   isModalOpen: boolean = false;
+  isConfirmModalOpen: boolean = false;
   selectedProduct: any = {};
   products: any[] = [];  // Lista de productos
   filteredProducts: any[] = [];  // Lista de productos filtrados
 
-  constructor(private productService: InventoryService) {}
+  constructor(private productService: InventoryService, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -57,17 +60,39 @@ export class InventarioComponent implements OnInit {
     }
     this.closeModal();
   }
+  
   deleteProduct(product: any): void {
-    if (confirm(`¿Estás seguro de que quieres eliminar el producto ${product.nombre}?`)) {
-      this.productService.deleteProducto(product.id).subscribe(() => {
-        this.products = this.products.filter(p => p !== product);
-      });
-    }
+    this.selectedProduct = product;
+    this.isConfirmModalOpen = true;
   }
+
+  confirmDeleteProduct(): void {
+    this.productService.deleteProducto(this.selectedProduct.id).subscribe(() => {
+      this.products = this.products.filter(p => p !== this.selectedProduct);
+      this.filteredProducts = this.products;
+    });
+    this.isConfirmModalOpen = false;
+  }
+
+  closeConfirmModal(): void {
+    this.isConfirmModalOpen = false;
+  }
+
   searchProducts(): void {
     this.filteredProducts = this.products.filter(product => 
       product.nombre.toLowerCase().includes(this.input.toLowerCase()) || 
       product.custom_id.toLowerCase().includes(this.input.toLowerCase())
     );
+  }
+  hasEditPermission(): boolean {
+    return this.authService.hasPermission('can_edit');
+  }
+
+  hasDeletePermission(): boolean {
+    return this.authService.hasPermission('can_delete');
+  }
+  
+  hasCreatePermission(): boolean {
+    return this.authService.hasPermission('can_create');
   }
 }
