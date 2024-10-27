@@ -90,6 +90,7 @@ div.body1{
             flex-direction: row;
             width: 42vw;
             align-items: center;
+            justify-content: left;
             margin-top: 0;
         }
 
@@ -118,6 +119,7 @@ div.body1{
                 font-size: 13px;
             }
         }
+                                                    //Estilos de la tabla hasta acá.**
     }
     div.body3{
         display: flex;
@@ -164,7 +166,58 @@ div.body1{
             }
         }
 
-        
+        .timetables{
+            display: flex;
+            width: 42vw;
+            justify-content: left;
+                                        //buscador, estilos
+            clr-input-container.filtro{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 0;
+                flex-wrap: nowrap;
+            }
+        }
     }
 }
 
+                                //Estilos de la tabla de clientes desde acá.**
+            #tabhis{
+                --clr-thead-bgcolor:#6f3d86;
+                --clr-thead-color: #fff;
+                --clr-table-border-radius: 5px;
+                --clr-table-cornercellradius:5px;
+                --clr-table-border-color: #f9f9f9;
+                width: 42vw;
+                margin-bottom: 4vh;
+                tr:nth-child(odd) {
+                    background-color: #ebebeb;
+                    }
+                
+                   tr:nth-child(even) {
+                    background-color: #F9F9F9;
+                }
+                td.left{
+                    vertical-align: middle;
+                    text-align: left;
+                    font-size: 15px;
+                }
+                th{
+                    font-size: 13px;
+                }
+
+                .label.label-info{
+                    --clr-label-info-bg-color: #fff8958f;
+                    --clr-label-info-border-color: #dfb83b;
+                }
+                .label.label-warning{
+                    --clr-label-warning-bg-color: #a7645b8f;
+                    --clr-label-warning-border-color: #753d17;
+                }
+                .label.label-success{
+                    --clr-label-success-bg-color: #8ff7a98f;
+                    --clr-label-success-border-color: #1a7a27;
+                }
+            }
+                            //Estilos de la tabla de clientes hasta acá.**
