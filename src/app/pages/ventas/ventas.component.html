@@ -9,27 +9,25 @@
             <div class="body2">
                 <h2>Venta N-</h2>
                 <div class="Ventasform">
-                    <form clrForm id="dosprim">
-                        <clr-input-container id="nombreC">
-                            <label>
-                                <input clrInput formControlName="NombreCliente" placeholder="Nombre del Cliente" />
-                            </label>
+                    <form>
+                        <clr-input-container>
+                          <label>Cliente:</label>
+                          <input id="cliente" clrInput formControlName="nombre" type="text" placeholder="Nombre del Cliente"/>
                         </clr-input-container>
-                        <clr-input-container id="nombreV">
-                            <label>
-                                <input clrInput formControlName="NombreVendedor" placeholder="Nombre del Vendedor" />
-                            </label>
-                        </clr-input-container>
-                    </form>
-                    <form clrForm id="dosseg">
-                        <clr-input-container id="Valor">
-                            <label>
-                                <input clrInput formControlName="NombreCliente" placeholder="V. total" type="number"/>
-                            </label>
-                        </clr-input-container>
-                        <clr-date-container id="fechadeventa">
-                            <label><input type="date" autocomplete="off" clrDate name="demo"/></label>
+                        <clr-date-container >
+                            <label>Fecha V.</label>
+                            <input id="fechadeventa" type="date" autocomplete="off" clrDate name="demo"/>
                         </clr-date-container>
+                        <clr-select-container>
+                          <label>Vendedor:</label>
+                          <select id="vendedor" clrSelect>
+                            <option></option>
+                          </select>
+                        </clr-select-container>
+                        <clr-input-container>
+                          <label>V. total</label>
+                          <input id="valort" clrInput formControlName="precio_detal" type="number" placeholder="$0000" />
+                        </clr-input-container>
                     </form>
                 </div>
             </div>

@@ -61,15 +61,26 @@ div.body1{
         align-content: center;
     }
 }
-.Ventasform{
+form{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-form#dosseg{
-    width: 15vw;
-    
-}
-form#dosprim{
+#cliente, #vendedor{
     width: 25vw;
+}
+#fechadeventa{
+    width: 12vw;
+}
+
+#valort{
+    width: 14.5vw;
+}
+
+input{
+    font-size: 17px;
+    background-color: #EBEBEB;
+    accent-color: #6F3D86;
 }
 label{
     border: 40px;
@@ -82,8 +93,6 @@ label{
     background-color: #EBEBEB;
 }
 .clr-input{
-    font-size: 20px;
-    background-color: #EBEBEB;
-    accent-color: #6F3D86;
+    
 }
 
