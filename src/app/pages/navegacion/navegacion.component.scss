@@ -7,13 +7,14 @@
     background-color: #d4bee3;
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     height: 3rlh;
     align-items: center;
     h3{
         font-size: 32px;
         margin-top: 0;
         margin-left: 40px;
+        margin-right: 40px;
         color: #223473;
         font-weight: 900;
     }

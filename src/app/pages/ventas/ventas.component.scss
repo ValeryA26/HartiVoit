@@ -1,1 +1,89 @@
-// <uniquifier>: Use a unique and descriptive class name
+div.fondo{
+    display: flex;
+    justify-content: center;
+}
+
+div.body0{
+    width: 1000px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100vw;
+    h1{
+        font-weight: 700;
+        color: #6F3D86;
+        font-size: 70px;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+}
+    
+div.body1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 95vw;
+
+    h2{
+        font-weight: 700;
+        color: #6F3D86;
+        font-size: 50px;
+        margin: 10px;
+        padding-top: 2vh;
+    }
+
+    div.body2{
+        display: flex;
+        background-color: #F9F9F9;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 45vw;
+        justify-content: center;
+        border-radius: 25px;
+
+        div.Ventasform{
+            width: 42vw;
+        }
+    }
+    div.body3{
+        display: flex;
+        background-color: #F9F9F9;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 25px;
+        width: 45vw;
+        justify-content: center;
+        align-content: center;
+    }
+}
+.Ventasform{
+    display: flex;
+}
+form#dosseg{
+    width: 15vw;
+    
+}
+form#dosprim{
+    width: 25vw;
+}
+label{
+    border: 40px;
+    justify-content: right;
+    color: #6F3D86;
+    width: 60px;
+}
+-clr-input-container{
+    display: flex;
+    background-color: #EBEBEB;
+}
+.clr-input{
+    font-size: 20px;
+    background-color: #EBEBEB;
+    accent-color: #6F3D86;
+}
+
