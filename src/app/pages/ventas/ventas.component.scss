@@ -84,12 +84,21 @@ div.body1{
             
             }
         }
+                                                    //buscador, estilos
+        clr-input-container.busca{
+            display: flex;
+            flex-direction: row;
+            width: 42vw;
+            align-items: center;
+            margin-top: 0;
+        }
 
                                                     //Estilos de la tabla desde acá.**
         .table.table-striped.table-bordered{
             --clr-thead-bgcolor:#6f3d86;
             --clr-thead-color: #fff;
             --clr-table-border-radius: 5px;
+            --clr-table-cornercellradius:5px;
             --clr-table-border-color: #f9f9f9;
             width: 42vw;
             margin-bottom: 4vh;
@@ -103,22 +112,59 @@ div.body1{
             td{
                 vertical-align: middle;
                 text-align: left;
-                font-size: 17px;
+                font-size: 15px;
             }
             th{
-                font-size: 17px;
+                font-size: 13px;
             }
         }
     }
     div.body3{
         display: flex;
+        flex-wrap: wrap;
         background-color: #F9F9F9;
         margin-left: 10px;
         margin-right: 10px;
         border-radius: 25px;
         width: 45vw;
         justify-content: center;
-        align-content: center;
+        flex-direction: row;
+        align-content: flex-start;
+
+        .TimeButtons{
+            width: 42vw;
+            display: flex;
+            justify-content: center;
+        }
+        .btn.btn-primary{
+            --clr-btn-primary-bg-color:#E3D5ED;
+            --clr-btn-primary-border-color:#E3D5ED;
+            --clr-btn-primary-color: #6F3D86;
+            --clr-btn-primary-hover-color: #fff;
+            --clr-btn-primary-hover-bg-color: #6F3D86;
+            width: 7vw;
+            height: 30px;
+            border-radius: 10px;
+        }
+        .TVendido{
+            width: 15vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            h2{
+                font-weight: 600;
+                margin: 0;
+                padding-top: 10px;
+            }
+            h3{
+                font-weight: 600;
+                margin: 0;
+                padding-top: 0;
+                padding-bottom: 8px;
+            }
+        }
+
+        
     }
 }
 
