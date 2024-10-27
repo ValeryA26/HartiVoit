@@ -15,7 +15,7 @@ div.body0{
     h1{
         font-weight: 700;
         color: #6F3D86;
-        font-size: 70px;
+        font-size: 60px;
         margin-bottom: 40px;
         margin-top: 40px;
     }
@@ -30,7 +30,7 @@ div.body1{
     h2{
         font-weight: 700;
         color: #6F3D86;
-        font-size: 50px;
+        font-size: 35px;
         margin: 10px;
         padding-top: 2vh;
     }
@@ -48,6 +48,7 @@ div.body1{
 
         div.Ventasform{
             width: 42vw;
+            margin-bottom: 3vh;
         }
     }
     div.body3{
@@ -65,55 +66,71 @@ form{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-#cliente, #vendedor{
-    width: 25vw;
-}
-#fechadeventa{
-    width: 12vw;
+
+    #cliente, #vendedor{
+        width: 25vw;
+    }
+    #fechadeventa{
+        width: calc(14.5vw - 30px);
+    }
+    
+    #valort{
+        width: 14.5vw;
+    }
+    
+    input{
+        font-size: 15px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        border-bottom-color: #6F3D86;
+    }
+    
+    label{
+        border: 40px;
+        justify-content: right;
+        color: #6F3D86;
+        width: 60px;
+        margin-bottom: 0.5vh;
+    }
+    -clr-input-container{
+        display: flex;
+        background-color: #EBEBEB;
+    }
+    .clrInput{
+        --clr-forms-input-padding:50px;
+    }
+    #valort,#cliente,#vendedor{
+        background-color: #EBEBEB;
+        accent-color: #6F3D86;
+        color: #6F3D86;
+        border-radius: 5px;
+        border-bottom-color: #6F3D86;
+    }
+
 }
 
-#valort{
-    width: 14.5vw;
-}
-
-input{
-    font-size: 17px;
-    padding-top: 8px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    border-bottom-color: #6F3D86;
-}
-
-label{
-    border: 40px;
-    justify-content: right;
-    color: #6F3D86;
-    width: 60px;
-}
--clr-input-container{
-    display: flex;
-    background-color: #EBEBEB;
-}
-#valort,#cliente,#vendedor{
-    background-color: #EBEBEB;
-    accent-color: #6F3D86;
-    color: #6F3D86;
-    border-radius: 5px;
-    border-bottom-color: #6F3D86;
-}
 
 .table.table-striped.table-bordered{
     --clr-thead-bgcolor:#6f3d86;
     --clr-thead-color: #fff;
     --clr-table-border-radius: 5px;
     --clr-table-border-color: #f9f9f9;
-    --bs-table-striped-color: #85d1ee;
+    width: 42vw;
+    margin-bottom: 2vh;
     tr:nth-child(odd) {
         background-color: #ebebeb;
         }
     
        tr:nth-child(even) {
         background-color: #F9F9F9;
-        }
+    }
+    td{
+        vertical-align: middle;
+        text-align: left;
+        font-size: 17px;
+    }
+    th{
+        font-size: 17px;
+    }
 }

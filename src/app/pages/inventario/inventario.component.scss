@@ -80,6 +80,17 @@ div.body0{
         display: flex;
         justify-content: center;
         align-items: center;
+        --clr-thead-bgcolor:#6f3d86;
+        --clr-thead-color: #fff;
+        --clr-table-border-radius: 5px;
+        --clr-table-border-color: #f9f9f9;
+        tr:nth-child(odd) {
+            background-color: #ebebeb;
+            }
+        
+           tr:nth-child(even) {
+            background-color: #F9F9F9;
+            }
     }
     td{
         vertical-align: middle;
