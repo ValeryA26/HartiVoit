@@ -49,6 +49,65 @@ div.body1{
         div.Ventasform{
             width: 42vw;
             margin-bottom: 3vh;
+
+                                    //Estilos del formulario desde acá.**
+            form{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                
+                input{
+                    font-size: 15px;
+                    padding-top: 12px;
+                    padding-bottom: 10px;
+                    border-radius: 5px;
+                    border-bottom-color: #6F3D86;
+                }
+                label{
+                    border: 40px;
+                    justify-content: right;
+                    color: #6F3D86;
+                    width: 60px;
+                    margin-bottom: 0.5vh;
+                }
+                                        //Específicos para los campos por aparte, a tener en cuenta: "input" no afecta a Vendedor ya que este es dropdown**
+                #cliente, #vendedor{width: 25vw;}
+                #fechadeventa{width: calc(14.5vw - 30px);}
+                #valort{width: 14.5vw;}
+                #valort,#cliente,#vendedor{
+                    background-color: #EBEBEB;
+                    accent-color: #6F3D86;
+                    color: #6F3D86;
+                    border-radius: 5px;
+                    border-bottom-color: #6F3D86;
+                }
+            
+            }
+        }
+
+                                                    //Estilos de la tabla desde acá.**
+        .table.table-striped.table-bordered{
+            --clr-thead-bgcolor:#6f3d86;
+            --clr-thead-color: #fff;
+            --clr-table-border-radius: 5px;
+            --clr-table-border-color: #f9f9f9;
+            width: 42vw;
+            margin-bottom: 4vh;
+            tr:nth-child(odd) {
+                background-color: #ebebeb;
+                }
+            
+               tr:nth-child(even) {
+                background-color: #F9F9F9;
+            }
+            td{
+                vertical-align: middle;
+                text-align: left;
+                font-size: 17px;
+            }
+            th{
+                font-size: 17px;
+            }
         }
     }
     div.body3{
@@ -62,75 +121,4 @@ div.body1{
         align-content: center;
     }
 }
-form{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 
-    #cliente, #vendedor{
-        width: 25vw;
-    }
-    #fechadeventa{
-        width: calc(14.5vw - 30px);
-    }
-    
-    #valort{
-        width: 14.5vw;
-    }
-    
-    input{
-        font-size: 15px;
-        padding-top: 12px;
-        padding-bottom: 10px;
-        border-radius: 5px;
-        border-bottom-color: #6F3D86;
-    }
-    
-    label{
-        border: 40px;
-        justify-content: right;
-        color: #6F3D86;
-        width: 60px;
-        margin-bottom: 0.5vh;
-    }
-    -clr-input-container{
-        display: flex;
-        background-color: #EBEBEB;
-    }
-    .clrInput{
-        --clr-forms-input-padding:50px;
-    }
-    #valort,#cliente,#vendedor{
-        background-color: #EBEBEB;
-        accent-color: #6F3D86;
-        color: #6F3D86;
-        border-radius: 5px;
-        border-bottom-color: #6F3D86;
-    }
-
-}
-
-
-.table.table-striped.table-bordered{
-    --clr-thead-bgcolor:#6f3d86;
-    --clr-thead-color: #fff;
-    --clr-table-border-radius: 5px;
-    --clr-table-border-color: #f9f9f9;
-    width: 42vw;
-    margin-bottom: 2vh;
-    tr:nth-child(odd) {
-        background-color: #ebebeb;
-        }
-    
-       tr:nth-child(even) {
-        background-color: #F9F9F9;
-    }
-    td{
-        vertical-align: middle;
-        text-align: left;
-        font-size: 17px;
-    }
-    th{
-        font-size: 17px;
-    }
-}
