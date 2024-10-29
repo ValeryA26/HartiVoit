@@ -16,8 +16,8 @@ div.body0{
         font-weight: 700;
         color: #6F3D86;
         font-size: 60px;
-        margin-bottom: 40px;
-        margin-top: 40px;
+        margin-bottom: 30px;
+        margin-top: 30px;
     }
 }
     
@@ -45,6 +45,8 @@ div.body1{
         width: 45vw;
         justify-content: center;
         border-radius: 25px;
+        height: 70vh;
+        overflow-y: scroll;
 
         div.Ventasform{
             width: 42vw;
@@ -93,8 +95,8 @@ div.body1{
             form{
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-between;
-                width: 40vw;
+                justify-content: space-around;
+                width: 42vw;
                 
                 input{
                     font-size: 15px;
@@ -112,15 +114,23 @@ div.body1{
                 }
                                         //Específicos para los campos por aparte, a tener en cuenta: "input" no afecta a Vendedor ya que este es dropdown**
                 #producto{width: 25vw;}
-                #cantidadp{width: 14.5vw;}
+                #cantidadp{width: 10vw;}
                 #producto, #cantidadp{
                     background-color: #EBEBEB;
                     accent-color: #6F3D86;
                     color: #6F3D86;
                     border-radius: 5px;
                     border-bottom-color: #6F3D86;
+                    margin-top: 0%;
                 }
-            
+                h3{
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                    padding-right: 23vw;
+                }
+                .clr-form-control{
+                    margin-top: 10px;
+                }
             }
         }
                                                     //buscador, estilos
@@ -159,6 +169,10 @@ div.body1{
             }
         }
                                                     //Estilos de la tabla hasta acá.**
+        .btn.btn-primary{
+            background-color: #6F3D86;
+            border-color: #6F3D86;
+        }
     }
     div.body3{
         display: flex;
