@@ -73,8 +73,47 @@ div.body1{
                                         //Específicos para los campos por aparte, a tener en cuenta: "input" no afecta a Vendedor ya que este es dropdown**
                 #cliente, #vendedor{width: 25vw;}
                 #fechadeventa{width: calc(14.5vw - 30px);}
-                #valort{width: 14.5vw;}
-                #valort,#cliente,#vendedor{
+                #valort, #cantidadp{width: 14.5vw;}
+                #producto{width: 40vw;}
+                #valort,#cliente,#vendedor,#producto{
+                    background-color: #EBEBEB;
+                    accent-color: #6F3D86;
+                    color: #6F3D86;
+                    border-radius: 5px;
+                    border-bottom-color: #6F3D86;
+                }
+            
+            }
+        }
+        div.ProductForm{
+            width: 42vw;
+            margin-bottom: 3vh;
+
+                                    //Estilos del formulario desde acá.**
+            form{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 40vw;
+                
+                input{
+                    font-size: 15px;
+                    padding-top: 12px;
+                    padding-bottom: 10px;
+                    border-radius: 5px;
+                    border-bottom-color: #6F3D86;
+                }
+                label{
+                    border: 40px;
+                    justify-content: right;
+                    color: #6F3D86;
+                    width: 60px;
+                    margin-bottom: 0.5vh;
+                }
+                                        //Específicos para los campos por aparte, a tener en cuenta: "input" no afecta a Vendedor ya que este es dropdown**
+                #producto{width: 25vw;}
+                #cantidadp{width: 14.5vw;}
+                #producto, #cantidadp{
                     background-color: #EBEBEB;
                     accent-color: #6F3D86;
                     color: #6F3D86;
@@ -152,8 +191,8 @@ div.body1{
         }
         .TVendido{
             width: 40vw;
-            padding-right: 15vw;
-            padding-left: 15vw;
+            padding-right: 12vw;
+            padding-left: 12vw;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;

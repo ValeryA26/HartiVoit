@@ -29,13 +29,28 @@
                         </clr-input-container>
                     </form>
                 </div>
-                         <!--Buscador-->
+                         <!--Buscador
                 <clr-input-container class="busca">
                     <label>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="13" height="13"><path d="M16.33,5.05A10.95,10.95,0,1,1,5.39,16,11,11,0,0,1,16.33,5.05m0-2.05a13,13,0,1,0,13,13,13,13,0,0,0-13-13Z"/><path d="M35,33.29l-7.37-7.42-1.42,1.41,7.37,7.42A1,1,0,1,0,35,33.29Z"/></svg>
                     </label>
                     <input id="buscadorinput" clrInput placeholder="Búsqueda rápida" name="input"/>
-                </clr-input-container>
+                </clr-input-container>-->
+                <div class="ProductForm">
+                  <form>
+                    <h3>Selector de producto</h3>
+                  <clr-select-container>
+                    <label>Producto</label>
+                    <select id="producto" clrSelect>
+                      <option></option>
+                    </select>
+                  </clr-select-container>
+                  <clr-input-container>
+                    <label>Cantidad</label>
+                    <input id="cantidadp" clrInput formControlName="precio_detal" type="number" placeholder="Cantidad" />
+                  </clr-input-container>
+                  </form>
+                </div>
                          <!--Tabla de búsqueda **quedan cosas pendientes para arreglar con back**-->
                 <div id="tabla">
                     <table id="tabinv" class="table table-striped table-bordered" id="tabventas">
